@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include "lexer.h"
 
-Token::Token(TokenType tt, const char *value, int length) : _tt(tt), _value(value), _length(length) {}
 
 bool Token::equals(const char *s) const {
     if (_length != strlen(s)) {

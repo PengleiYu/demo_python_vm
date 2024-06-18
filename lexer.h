@@ -6,6 +6,7 @@
 #define DEMO_VM_LEXER_H
 
 #include <cstring>
+#include <cstdio>
 
 enum TokenType {
     T_INT,
@@ -23,7 +24,7 @@ public:
     const char *_value;
     int _length;
 
-    Token(TokenType tt, const char *value, int length);
+    Token(TokenType tt, const char *value, int length) : _tt(tt), _value(value), _length(length) {}
 
     bool equals(const char *s) const;
 
