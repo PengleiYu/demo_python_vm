@@ -4,7 +4,7 @@
 
 #include <cstdio>
 #include <cstdlib>
-#include "Lexer.h"
+#include "lexer.h"
 
 Token::Token(TokenType tt, const char *value, int length) : _tt(tt), _value(value), _length(length) {}
 

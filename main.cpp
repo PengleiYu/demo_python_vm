@@ -1,5 +1,5 @@
 #include <cstdio>
-#include "Lexer.h"
+#include "lexer.h"
 
 
 void test_lexer(const char *filename) {
