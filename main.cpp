@@ -3,10 +3,13 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <iostream>
+#include "string"
 
 #include "lexer.h"
 #include "parser.h"
 #include "visitor.h"
+#include "codeObj.h"
+#include "codeGen.h"
 
 void test_lexer(const char *filename) {
     Lexer lexer(filename);
@@ -19,9 +22,12 @@ void test_lexer(const char *filename) {
 void test_parser(const char *filename) {
     Lexer lexer(filename);
     Parser parser(&lexer);
-    PrintVisitor visitor;
+    CodeGen visitor;
     Node *pNode = parser.parse();
     visitor.visit(pNode);
+
+    CodeObject *codeObject = visitor.make_code_object();
+    CodeObject::write_to_file(std::string(filename).append("c"), *codeObject);
 }
 
 
