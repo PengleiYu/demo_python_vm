@@ -18,9 +18,7 @@ int CodeObject::write_to_file(std::string &filename, CodeObject &co) {
         return -1;
     }
 
-    printf("1");
     file.write(reinterpret_cast<const char *>(&magic_number), 4);
-    printf("2");
     int ret = co.save_to_file(file);
 
     file.close();

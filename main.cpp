@@ -5,11 +5,11 @@
 #include <iostream>
 #include "string"
 
-#include "lexer.h"
-#include "parser.h"
-#include "visitor.h"
-#include "codeObj.h"
-#include "codeGen.h"
+#include "parse/lexer.h"
+#include "parse/parser.h"
+#include "parse/visitor.h"
+#include "parse/codeObj.h"
+#include "parse/codeGen.h"
 
 void test_lexer(const char *filename) {
     Lexer lexer(filename);
